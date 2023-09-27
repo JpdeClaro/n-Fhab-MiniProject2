@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>WardrobeManila</title>
+</head>
+<body>
+
+
+<div class="grid-container">
+        <header class="header">
+            <nav class="nav_container">
+                <!-- sync logo to homepage inside href -->
+                <img class="logo" href= "index.html" src="Images/LOGO-Wardrobe Manila.png" alt="logo"> 
+    
+                <!-- Navigation links for ... -->
+                <div>
+                    <ul id="nav-links">
+                        <li><a class="btn btn-translucent" type="button" href="#">Men</a></li>
+                        <li><a class="btn btn-translucent" type="button" href="#">Women</a></li>
+                        <li><a class="btn btn-translucent" type="button" href="#">Kids</a></li>
+                    </ul>
+                </div>
+    
+                <!-- <div id="mobile-menu" class="navMenu">
+                    <ul id="nav-links-mobile">
+                        <li><a href="">Men</a></li>
+                        <li><a href="">Women</a></li>
+                        <li><a href="">Kids</a></li>
+                    </ul>
+                </div> -->
+                
+    
+                <!-- Icons -->
+                <div>
+                    <ul id="icon-links">
+                        <li class="clickSearchIcon"><img class="btn btn-translucent" type="button" src="Images/SVGs/search.svg" href="#" alt="SearchIcon"></li>
+                        <li><img class="btn btn-translucent" type="button" src="Images/SVGs/profile.svg" href="" alt="Icon"></li>
+                        <li><img class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg" href="" alt="Icon"></li>
+                        <li><img class="btn btn-translucent" type="button" src="Images/SVGs/cart.svg" href="" alt="Icon"></li>
+                    </ul>
+                </div>
+    
+                <!-- researved for NavBar Function -->
+                <div>
+                    <img id="burgerbtn" src="Images/SVGs/menu_btn.svg" class="btn btn-translucent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                        <div><img class="offcanvas-top-logo" src="Images/LOGO-Wardrobe Manila.png" alt="logo"></div>
+                        <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasTopLabel" href="#" alt="Men's Page">Browse Menu:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="offcanvas-list">
+                                <li><a href="">Men</a></li>
+                                <li><a href="">Women</a></li>
+                                <li><a href="">Kids</a></li>
+                                <li><a href="">Others</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+        </header>
+        <main class="content">
+
+            <!-- Carousel Slide Top -->
+            <div class>
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      <div class="carousel-item">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      <div class="carousel-item">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                      </div>
+                    </div>
+                  </div>   
+            </div>
+            <!-- Carousel Main -->
+            <div>
+
+                <div id="carouselMain" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2"></button>
+                    </div>
+                    
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Images/Screenshot 2023-09-22 141920.png" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Images/Screenshot 2023-09-22 141920.png" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Images/Screenshot 2023-09-22 141920.png" alt="" class="d-block w-100">
+                    </div>
+                    </div>
+                    
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+  
+            </div>
+
+        </main>
+
+        <!-- Footer Section -->
+        
+        <footer class="footer">Footer</footer>
+        
+</div>
+
+
+
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
