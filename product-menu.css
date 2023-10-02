@@ -14,7 +14,8 @@ body{
     grid-template-rows: auto;
     grid-template-areas:
       "header header header"
-      "content content content"
+      "product-menu product-menu product-menu"
+      "sidebar content content"
       "footer footer footer";
     /* grid-gap: 20px; */
   }
@@ -81,12 +82,21 @@ body{
 
 }
 
+/* Sidebar Section */
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: rgb(255, 189, 189);
+    padding-left: 100px;
+    margin-right: 50px ;
+    padding-top: 20px;
+  }
 /* Main section */
 
 .content {
   grid-area: content;
   /* background-color: lightgray; */
-  margin-left: 100px;
+  margin-left: 50px;
   margin-right: 100px ;
   padding-top: 20px;
   
