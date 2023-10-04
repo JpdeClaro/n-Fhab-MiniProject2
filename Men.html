@@ -4,17 +4,17 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Kid.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="Images/WM-Favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles/Kid.css">
     <title>WardrobeManila</title>
 </head>
 <body>
 
 
 <div class="grid-container">
-        <header class="header">
+        <header class="header fixed-top" id="stickScrollUp">
             <nav class="nav_container">
                 <!-- sync logo to homepage inside href -->
                 <img class="logo" href= "index.html" src="Images/LOGO-Wardrobe Manila.png" alt="logo"> 
@@ -23,7 +23,7 @@
                 <div>
                     <ul id="nav-links">
                         <li><a class="btn btn-translucent" type="button" href="Men.html"><b>Men</b></a></li>
-                        <li><a class="btn btn-translucent" type="button" href="Women.html">Women</a></li>
+                        <li><a class="btn btn-translucent" type="button" href="Index.html">Women</a></li>
                         <li><a class="btn btn-translucent" type="button" href="Kid.html">Kids</a></li>
                     </ul>
                 </div> 
@@ -31,10 +31,16 @@
                 <!-- Icon links-->
                 <div>
                     <ul id="icon-links">
-                        <li class="clickSearchIcon"><a href=""><img class="btn btn-translucent" type="button" src="Images/SVGs/search.svg" alt="SearchIcon"></a></li>
-                        <li><a href=""><img class="btn btn-translucent" type="button" src="Images/SVGs/profile.svg" alt="Icon"></a></li>
-                        <li><a href=""><img class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></a></li>
-                        <li><a href=""><img class="btn btn-translucent" type="button" src="Images/SVGs/cart.svg"alt="Icon"></a></li>
+                        <li class="clickSearchIcon"><img class="btn btn-translucent" type="button" src="Images/SVGs/search.svg" href="#" alt="SearchIcon"></li>
+                        <li><img class="btn btn-translucent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" src="Images/SVGs/profile.svg" href="#" alt="Icon">
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="SignupForm.html">Sign Up</a></li>
+                                <li><a class="dropdown-item" href="LoginForm.html">Log In</a></li>
+                                <li><a class="dropdown-item" href="#">My Order</a></li>
+                            </ul>
+                        </li>
+                        <li><img class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg" href="#" alt="Icon"></li>
+                        <li><img class="btn btn-translucent" type="button" src="Images/SVGs/cart.svg" data-bs-toggle="dropdown" aria-expanded="false" alt="Icon"></li>
                     </ul>
                 </div>
     
@@ -112,13 +118,13 @@
                 <!-- The slideshow/carousel -->
                 <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="Images/Screenshot 2023-09-22 141920.png" alt="" class="d-block w-100">
+                    <img src="Images/Carousel Images/CarouselSlide-2.png" alt="" class="d-block w-100">
                 </div>
                 <div class="carousel-item"  data-bs-interval="4000">
-                    <img src="Images/Screenshot 2023-09-22 141920.png" alt="" class="d-block w-100">
+                    <img src="Images/Carousel Images/CarouselSlide-1.png" alt="" class="d-block w-100">
                 </div>
                 <div class="carousel-item"  data-bs-interval="4000">
-                    <img src="Images/Screenshot 2023-09-22 141920.png" alt="" class="d-block w-100">
+                    <img src="Images/Carousel Images/CarouselSlide.png" alt="" class="d-block w-100">
                 </div>
                 </div>
                 
@@ -153,46 +159,22 @@
                                     <div class="row mb-5 gx-2">
                                         <div class="col">
                                             <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men.png" class="responsive-image" alt="">
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-1.png" class="responsive-image" alt="">
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-2.png" class="responsive-image" alt="">
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row mb-5 gx-2">
-                                        <div class="col">
-                                            <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-3.png" class="responsive-image" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -201,22 +183,46 @@
                                     <div class="row mb-5 gx-2">
                                         <div class="col">
                                             <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-4.png" class="responsive-image" alt="">
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-5.png" class="responsive-image" alt="">
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-6.png" class="responsive-image" alt="">
                                             </a>
                                         </div>
                                         <div class="col">
                                             <a href="">
-                                                <img src="Images/WOMEN/Category/Special deals.png" class="responsive-image" alt="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-7.png" class="responsive-image" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row mb-5 gx-2">
+                                        <div class="col">
+                                            <a href="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-8.png" class="responsive-image" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-9.png" class="responsive-image" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-10.png" class="responsive-image" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="">
+                                                <img src="Images/MEN(1)/FeaturedProducts for men-11.png" class="responsive-image" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -240,22 +246,22 @@
                 </div>
                 <div class="row">
                     <ul>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Dresses.png"  class="responsive-image" alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Tops.png"  class="responsive-image" alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Bottoms.png"  class="responsive-image" alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Co-ords.png"  class="responsive-image" alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Lingerie.png"  class="responsive-image" alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Beachwear.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318907.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318908.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318909.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318910.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318911.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318912.png"  class="responsive-image" alt=""></a></li>
                     </ul>   
                 </div>
                 <div class="row">
                     <ul>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Shoes.png"  class="responsive-image" alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Bags.png" class="responsive-image"  alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Accessories.png"  class="responsive-image" alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Beauty & Health.png"  class="responsive-image" alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Home & Living.png"  class="responsive-image" alt=""></a></li>
-                    <li><a href="#"><img src="Images/WOMEN/Category/Electronics.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318913.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318914.png" class="responsive-image"  alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318915.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318916.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318917.png"  class="responsive-image" alt=""></a></li>
+                    <li><a href="#"><img src="Images/MEN(1)/Frame 427318918.png"  class="responsive-image" alt=""></a></li>
                     </ul>   
                 </div>
                 <div class="mb-5">
@@ -720,7 +726,7 @@
 
 
 
-    <script src=""></script>
+    <script src="scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

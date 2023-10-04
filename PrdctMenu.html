@@ -4,143 +4,419 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="product-menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="Images/WM-Favicon.png" type="image/png" sizes="32x32">
     <link rel="icon" href="Images/WM-Favicon.png" type="image/png" sizes="16x16">
-    
+    <link rel="stylesheet" href="styles/product-menu.css">
     <title>WardrobeManila</title>
 </head>
 <body>
 
 
 <div class="grid-container">
-        <header class="header">
-            <nav class="nav_container">
-                <!-- sync logo to homepage inside href -->
-                <img class="logo" href= "index.html" src="Images/LOGO-Wardrobe Manila.png" alt="logo"> 
-    
-                <!-- Navigation links for ... -->
-                <div>
-                    <ul id="nav-links">
-                        <li><a class="btn btn-translucent" type="button" href="#">Men</a></li>
-                        <li><a class="btn btn-translucent" type="button" href="#">Women</a></li>
-                        <li><a class="btn btn-translucent" type="button" href="#">Kids</a></li>
-                    </ul>
-                </div> 
-    
-                <!-- Icon links-->
-                <div>
-                    <ul id="icon-links">
-                        <li class="clickSearchIcon"><img class="btn btn-translucent" type="button" src="Images/SVGs/search.svg" href="#" alt="SearchIcon"></li>
-                        <li><img class="btn btn-translucent" type="button" src="Images/SVGs/profile.svg" href="#" alt="Icon"></li>
-                        <li><img class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg" href="#" alt="Icon"></li>
-                        <li><img class="btn btn-translucent" type="button" src="Images/SVGs/cart.svg" href="" alt="Icon"></li>
-                    </ul>
-                </div>
-    
-                <!-- researved for NavBar Function -->
-                <div>
-                    <img id="burgerbtn" src="Images/SVGs/menu_btn.svg" class="btn btn-translucent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+    <header class="header fixed-top" id="stickScrollUp">
+        <nav class="nav_container">
+            <!-- sync logo to homepage inside href -->
+            <img class="logo" href= "index.html" src="Images/LOGO-Wardrobe Manila.png" alt="logo"> 
 
-                    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-                        <div><img class="offcanvas-top-logo" src="Images/LOGO-Wardrobe Manila.png" alt="logo"></div>
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasTopLabel" href="#" alt="Men's Page">Browse Menu:</h5>
+            <!-- Navigation links for ... -->
+            <div>
+                <ul id="nav-links">
+                    <li><a class="btn btn-translucent" type="button" href="Men.html">Men</a></li>
+                    <li><a class="btn btn-translucent" type="button" href="Index.html">Women</a></li>
+                    <li><a class="btn btn-translucent" type="button" href="Kid.html">Kids</a></li>
+                </ul>
+            </div> 
+
+            <!-- Icon links-->
+            <div>
+                <ul id="icon-links">
+                    <li class="clickSearchIcon"><img class="btn btn-translucent" type="button" src="Images/SVGs/search.svg" href="#" alt="SearchIcon"></li>
+                    <li><img class="btn btn-translucent dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" src="Images/SVGs/profile.svg" href="#" alt="Icon">
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="SignupForm.html">Sign Up</a></li>
+                            <li><a class="dropdown-item" href="LoginForm.html">Log In</a></li>
+                            <li><a class="dropdown-item" href="#">My Order</a></li>
+                        </ul>
+                    </li>
+                    <li><img class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg" href="#" alt="Icon"></li>
+                    <li><img class="btn btn-translucent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" src="Images/SVGs/cart.svg" alt="Icon">
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header pt-5">
+                            <div class="column1"><b>Item</b></div>
+                            <div class="column2"><b>Unit price</b></div>
+                            <div class="column3"><b>Units</b></div>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
-                            <ul class="offcanvas-list">
-                                <li><a href="">Men</a></li>
-                                <li><a href="">Women</a></li>
-                                <li><a href="">Kids</a></li>
-                                <li><a href="">Others</a></li>
-                            </ul>
+                            <div id="cart-items"></div>
                         </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- researved for NavBar Function -->
+            <div>
+                <img id="burgerbtn" src="Images/SVGs/menu_btn.svg" class="btn btn-translucent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                    <div><img class="offcanvas-top-logo" src="Images/LOGO-Wardrobe Manila.png" alt="logo"></div>
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasTopLabel" href="#" alt="Burger Menu">Browse Menu:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="offcanvas-list">
+                            <li><a class="btn btn-translucent" type="button" href="Men.html">Men</a></li>
+                            <li><a class="btn btn-translucent" type="button" href="Index.html">Women</a></li>
+                            <li><a class="btn btn-translucent" type="button" href="Kid.html">Kids</a></li>
+                            <li><a class="btn btn-translucent" type="button" href="#">Others</a></li>
+
+                        </ul>
+                        <ul id="offcanvas-iconlinks">
+                            <li class="clickSearchIcon"><a href=""><img class="btn btn-translucent" type="button" src="Images/SVGs/search.svg" alt="SearchIcon"></a></li>
+                            <li><a href=""><img class="btn btn-translucent" type="button" src="Images/SVGs/profile.svg" alt="Icon"></a></li>
+                            <li><a href=""><img class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></a></li>
+                            <li><a href=""><img class="btn btn-translucent" type="button" src="Images/SVGs/cart.svg"alt="Icon"></a></li>
+                        </ul>
                     </div>
                 </div>
-        </header>
-        <!-- SideBar Section -->
-        <div class="product-menu">Product Menu</div>
-        <aside class="sidebar">Sidebar</aside>
+            </div>
+    </header>
+        <!-- Main-top section is empty, in case I have something to add. -->
+        <section class="main-top"></section>
+        <aside class="sidebar">
+        <!-- productmenu Section -->
+
+        <div class="product-menu">
+            <ul id="menu-list">
+                <h5 class="side-title">Category</h5>
+                <hr>
+                <li class="has-submenu">
+                    <h6>Women's Wardrobe:</h6>
+                    <ul class="submenu" >
+                        <li><a href="#">Dresses</a></li>
+                        <li><a href="#">Tops</a></li>
+                        <li><a href="#">Bottoms</a></li>
+                        <li><a href="#">Co-ords</a></li>
+                        <li><a href="#">Lingerie & Loungewear</a></li>
+                        <li><a href="#">See more <i class="fa-solid fa-caret-down"></i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <h6>Footwear:</h6>
+                    <ul class="submenu">
+                        <li><a href="#">Loafers & Flats</a></li>
+                        <li><a href="#">Sneakers</a></li>
+                        <li><a href="#">Formal Shoes</a></li>
+                        <li><a href="#">Boots</a></li>
+                        <li><a href="">Leather</a></li>
+                        <li><a href="">See more <i class="fa-solid fa-caret-down"></i></a></li>
+
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <h6>Accessories:</h6>
+                    <ul class="submenu">
+                        <li><a href="#">Watches</a></li>
+                        <li><a href="#">Belts</a></li>
+                        <li><a href="#">Hats</a></li>
+                        <li><a href="#">Sunglasses</a></li>
+                        <li><a href="#">Bags</a></li>
+                        <li><a href="#">See more <i class="fa-solid fa-caret-down"></i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <h6>Electronics:</h6>
+                    <ul class="submenu">
+                        <li><a href="#">Camera</a></li>
+                        <li><a href="#">SmartPhone</a></li>
+                        <li><a href="#">Headsets</a></li>
+                        <li><a href="#">Smarwatch</a></li>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">See more <i class="fa-solid fa-caret-down"></i></a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <h6>Home & Living:</h6>
+                    <ul class="submenu">
+                        <li><a href="#">Furniture</a></li>
+                        <li><a href="#">Home Decor</a></li>
+                        <li><a href="#">Kitchen Dining</a></li>
+                        <li><a href="#">Cleaning Supplies</a></li>
+                        <li><a href="#">Outdoor Garden</a></li>
+                        <li><a href="#">See more <i class="fa-solid fa-caret-down"></i></a></li>
+                    </ul>
+                </li>
+                <hr>
+                <div><h5 class="side-title">Color</h5></div>
+                <div class="color-palette">
+                    <div class="color-item" style="background-color: #ff677d;"></div>
+                    <div class="color-item" style="background-color: #ffa07a;"></div>
+                    <div class="color-item" style="background-color: #40e0d0;"></div>
+                    <div class="color-item" style="background-color: #ffd700;"></div>
+                    <div class="color-item" style="background-color: #20b2aa;"></div>
+                    <div class="color-item" style="background-color: #ff6347;"></div>
+                    <div class="color-item" style="background-color: #6495ed;"></div>
+                    <div class="color-item" style="background-color: #ff4500;"></div>
+                    <div class="color-item" style="background-color: #9370db;"></div>
+                    <div class="color-item" style="background-color: #008080;"></div>
+                    <div class="color-item"><i class="fab fa-add"></i></div>
+                    <!-- Add available colors here, if needed -->
+                </div>
+                <hr>
+                <div class="sidebar2">
+                    <h5 class="side-title">Customer Reviews</h5>
+                    <div class="review">
+                        <span class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p class="comment">Excellent service and fast delivery.</p>
+                        <p class="customer">- Mary Joy</p>
+                    </div>
+                    <div class="review">
+                        <span class="rating">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                        <p class="comment">Great products! Will definitely shop here again.</p>
+                        <p class="customer">- Fhab</p>
+                    </div>
+                    <div class="review">
+                        <span class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <p class="comment">Highly recommended! Quality items and fantastic customer support.</p>
+                        <p class="customer">- Elon Musk</p>
+                    </div>
+                    <div class="morereview">
+                        <a href=""><i class="fa-solid fa-caret-down"></i> See more</a>
+                    </div>
+                    <hr>
+                </div>
+            </ul>
+        </div>
+        </aside>
         <!-- Content section here -->
-        <main class="content">content
-            
+        <main class="content">
+            <div class="pdctmenu-container">
+            <div class="row mb-3">
+                <div class="col">
+                    <ul class="select-tabs">
+                        <li><a href="index.html">HOME |</a></li>
+                        <li><a href="PrdctMenu.html">Category: Dresses |</a></li>
+                        <li><a href="">...</a></li>
+                    </ul>
+                </div>
+                <div class="sort-container">
+                    <label for="sort-select">Sort By:</label>
+                    <select id="sort-select">
+                        <option value="default"> Recommended</option>
+                        <option value="price"> Arrivals</option>
+                        <option value="price"> Price</option>
+                        <option value="popularity"> Popularity</option>
+                        <option value="cate gory"> Category</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3 gx-2">
+                <div class="col">
+                    <a href="SnglPrdct.html">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <!-- <div class="row">
+                        <ul class="Product">
+                            <li>Price</li>
+                            <li>Product Name</li>
+                        </ul>
+                    </div> -->
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart"  class="btn btn-translucent" data-product-id="1" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="2" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="3" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="4" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row mb-3 gx-2">
+                <div class="col">
+                    <a href="s">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <!-- <div class="row">
+                        <ul class="Product">
+                            <li>Price</li>
+                            <li>Product Name</li>
+                        </ul>
+                    </div> -->
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row mb-3 gx-2">
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <!-- <div class="row">
+                        <ul class="Product">
+                            <li>Price</li>
+                            <li>Product Name</li>
+                        </ul>
+                    </div> -->
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="">
+                        <img src="Images/WOMEN/Category/Discovermore.png" class="responsive-image" alt="">
+                    </a>
+                    <div class="row">
+                        <ul class="btn-icons">
+                            <li>
+                                <button type="button" class="btn-buynow">Buy</button>
+                            </li>
+                            <li><img class="add-to-wishlist" class="btn btn-translucent" type="button" src="Images/SVGs/heart-sign.svg"alt="Icon"></li>
+                            <li><img class="add-to-cart" class="btn btn-translucent" data-product-id="" type="button" src="Images/SVGs/cart.svg"alt="Icon"></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
         </main>
 
         <!-- Footer section -->
         <footer class="footer">
-            <div class="footer-top">
-              <div class="row">
-                <!-- <div class="col"></div> -->
-                <!-- <div class="col">2</div> -->
-                <div class="input-signup">
-
-                  <form action="#">
-
-                    <div class="row mb-3">
-                      <h2 style="color: #ffffff;" >Don't Miss Out</h2>
-                      <p style="color: #ffffff">Sign up our lates fashion, news, and rewards.</p>
-                    </div>  
-                      <div class="row mb-3">
-                        <label for="inputUserName">Username:</label>
-                        <input id="inputUserName" type="text" class="form-control" placeholder="Enter your username" aria-label="Text input with dropdown button" required>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="inputEmailAdd">Email Address:</label>
-                        <input id="inputEmailAdd" type="text" class="form-control" placeholder="Enter your email address" aria-label="Text input with dropdown button" required>
-                    </div>
-                    <div class="row mb-4">
-                        <label for="inputPassword">Password:</label>
-                        <input id="inputPassword" type="password" class="form-control" placeholder="Create your password" required>
-                    </div>
-                    <div class="row mb-3">
-                        <button type="button" id="btn-signup" class="btn">Sign up for free!</button>
-                    </div>
-          
-                    <!-- <div class="row mb-3">
-                      <div>
-                        <label for="btn-ctn" style="color: #ffffff">Contact Number:</label>
-                      </div>
-                      <div class="input-group">
-                        <select class="btn dropdown-toggle" id="btn-ctn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          <option value="+93">+93 AF</option>
-                          <option value="+355">+355 AL</option>
-                          <option value="+973">+973 BH</option>
-                          <option value="+880">+880 BD</option>
-                          <option value="+855">+855 KH</option>
-                          <option value="+1">+1 CA</option>
-                          <option value="+86">+86 CN</option>
-                          <option value="+20">+20 EG</option>
-                          <option value="+358">+358 FI</option>
-                          <option value="+33">+33 FR</option>
-                          <option value="+30">+30 GR</option>
-                          <option value="+49">+49 DE</option>
-                          <option value="+852">+852 HK</option>
-                          <option value="+36">+36 HU</option>
-                          <option value="62">+62 IND</option>
-                          <option value="+39">+39 IT</option>
-                          <option value="+81">+81 JP</option>
-                          <option value="+7">+7 KZ</option>
-                          <option value="+856">+856 LA</option>
-                          <option value="+63">+63 PH</option>
-                          <option value="+7">+7 RU</option>
-                          <option value="+65">+65 SG</option>
-                          <option value="+34">+34 ES</option>
-                          <option value="+66">+66 TH</option>
-                          <option value="+1">+1 US</option>
-                        </select> 
-                        <input type="number" id="input-ctn" class="form-control" placeholder="Enter your Contact Number" aria-label="Text input with dropdown button" required>
-                      </div>
-                    </div> -->
-                    <!-- <div class="row">
-                      <button type="button" id="btn-signup" class="btn">Sign Up</button>
-                    </div> -->
-                  </form>
-                </div>
-              </div>
-            </div>
             <div class="footer-bottom">
               <div class="row mb-5 row1-bottom">
                   <div class="col">
@@ -221,7 +497,10 @@
 
 
 
-    <script src=""></script>
+<script src="/scripts/script.js"></script>
+<!-- <script src="scripts/product.js"></script>
+<script src="scripts/app.js"></script> -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
